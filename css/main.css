@@ -1,0 +1,66 @@
+*{
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	background-color: #89609E;
+}
+section{
+	margin-left: 10%;
+	margin-top: 10%;
+}
+div{
+	width: 300px;
+	height: 35px;
+	padding: 0.5% 2% ;
+	background-color: black;
+	opacity: 0.2;
+	color: white;
+	border-radius: 5px;
+}
+div:hover{
+	background-color: black;
+	opacity: 0.6;
+	color: white;
+}
+.fondoForm{
+	background-color: #E2E4E6;
+	width: 300px;
+	padding: 1px;
+	border-radius: 5px;
+}
+.inputText{
+	width: 290px;
+	height: 38px;
+	padding: 0.5% 2%;
+	background-color: #D7D9DB;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-left: 4px;
+	margin-bottom: 4px;
+	display: block;
+}
+.boton{
+	width: 80px;
+	height: 34px;
+	background-color: #449D44;
+	border-radius: 5px;
+	border: 1px solid #449D44;
+	margin-left: 4px;
+	margin-bottom: 4px;
+	color: white;
+	font-weight: bold;
+	font-size: 120%;
+}
+.icon-cross{
+	font-size: 140%;
+	margin-left: 20px;
+	border: none;
+	color: gray;
+	background-color: #E2E4E6;
+}
+.icon-cross:hover{
+	color: black;
+}
+
