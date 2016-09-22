@@ -7,10 +7,13 @@ body{
 	background-color: #89609E;
 }
 section{
-	margin-left: 10%;
+	width: 100%;
 	margin-top: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
+	display: inline-block;
 }
-div{
+#addList{
 	width: 300px;
 	height: 35px;
 	padding: 0.5% 2% ;
@@ -18,17 +21,60 @@ div{
 	opacity: 0.2;
 	color: white;
 	border-radius: 5px;
+
 }
-div:hover{
+#addList:hover{
 	background-color: black;
 	opacity: 0.6;
 	color: white;
+}
+.createList{
+	width: 300px;
+	background-color: #E2E4E6;
+	display: inline-block;
+	margin-left: 0%;
+	margin-right: 3%;
+	margin-top: 0.5%;
+	float: left;
+	border-radius: 5px;
+	padding: 0px;
+}
+.divClass{
+	background-color: #E2E4E6;
+	width: 296px;
+	font-weight: bold;
+	padding: 9px 5px 5px 5px;
+	border-radius: 5px;
+}
+.divEnlace{
+	background-color: #E2E4E6;
+	width: 300px;
+	padding: 9px 5px 6px 5px;
+	border-radius: 5px;
+
+}
+.divEnlace:hover{
+	background-color: black;
+	opacity: 0.6;
+	color: white;
+}
+.cardEnlace{
+	color: white;
+}
+.cardEnlace:hover{
+	background-color: black;
+	opacity: 0.3;
 }
 .fondoForm{
 	background-color: #E2E4E6;
 	width: 300px;
 	padding: 1px;
 	border-radius: 5px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 4px;
+	margin-bottom: 4px;
+	margin-right: 4px;
 }
 .inputText{
 	width: 290px;

@@ -1,5 +1,8 @@
 # trello
-1. Este trabajo mostrará primero un div y al momento de hacer click en ella aparecerá un pequeño formulario input y un botón (formulario) para que el usuario ingrese el nombre de la lista. 
+Versión 0.0.2
 
-![image](lista.png)
-![image](form.png)
+1. Mostrar en el HTML, el texto ingresado al dar click en el botón de "Guardar" del formulario (como si fuera título de la lista).
+Debajo del título, mostrar el mensaje clickeable de "Añadir una tarjeta". 
+
+![image](version2.png)
+![image](version21.png)
