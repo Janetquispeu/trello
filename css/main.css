@@ -23,7 +23,6 @@ section{
 	border-radius: 3px;
 	cursor: pointer;
 	display: inline-block;
-	margin-top: 6px;
 
 }
 #addList:hover{
@@ -90,6 +89,8 @@ section{
 	margin-left: 4px;
 	margin-bottom: 4px;
 	display: block;
+	border-color: #aaa;
+	box-shadow: inset 0 1px 8px rgba(0,0,0,.15);
 }
 .boton{
 	width: 80px;
