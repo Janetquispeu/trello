@@ -59,6 +59,23 @@ window.addEventListener("load",function(){
 			cardEnlace.classList.add("cardEnlace");
 			cardEnlace.textContent="Add an card...";
 
+			divEnlace.addEventListener("click",function(){
+			divEnlace.style.display="none";
+			var divTextArea=document.createElement("form");
+			var textArea=document.createElement("textarea");
+			var botonAdd=document.createElement("button");
+			var btnRemovep=document.createElement("button")
+			divContent.appendChild(divTextArea);
+			divTextArea.appendChild(textArea);
+			divTextArea.appendChild(botonAdd);
+			divTextArea.appendChild(btnRemovep);
+			botonAdd.textContent="Add";
+
+			divTextArea.classList.add("divTextArea");
+			textArea.classList.add("textArea");
+			botonAdd.classList.add("botonAdd");
+		})
+
 		}
 
 		function desapareceFormulario(){
