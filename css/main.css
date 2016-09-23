@@ -20,12 +20,15 @@ section{
 	background-color: black;
 	opacity: 0.2;
 	color: white;
-	border-radius: 5px;
+	border-radius: 3px;
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 6px;
 
 }
 #addList:hover{
 	background-color: black;
-	opacity: 0.6;
+	opacity: 0.3;
 	color: white;
 }
 .createList{
@@ -36,40 +39,41 @@ section{
 	margin-right: 3%;
 	margin-top: 0.5%;
 	float: left;
-	border-radius: 5px;
+	border-radius: 3px;
 	padding: 0px;
 }
 .divClass{
 	background-color: #E2E4E6;
 	width: 296px;
 	font-weight: bold;
-	padding: 9px 5px 5px 5px;
-	border-radius: 5px;
+	padding: 9px 5px 5px 14px;
+	border-radius: 3px;
 }
 .divEnlace{
 	background-color: #E2E4E6;
 	width: 300px;
-	padding: 9px 5px 6px 5px;
-	border-radius: 5px;
+	padding: 9px 5px 6px 14px;
+	border-radius: 0px 0px 3px 3px;
+	text-decoration: none;
+	cursor: pointer;
 
 }
 .divEnlace:hover{
 	background-color: black;
-	opacity: 0.6;
-	color: white;
+	opacity: 0.2;
+	text-decoration: underline;
 }
 .cardEnlace{
-	color: white;
+	color: #9B9B9C;
 }
 .cardEnlace:hover{
-	background-color: black;
-	opacity: 0.3;
+	color: black;
 }
 .fondoForm{
 	background-color: #E2E4E6;
 	width: 300px;
 	padding: 1px;
-	border-radius: 5px;
+	border-radius: 3px;
 	display: inline-block;
 	margin-top: 5px;
 	margin-left: 4px;

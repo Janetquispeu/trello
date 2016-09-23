@@ -6,9 +6,7 @@ window.addEventListener("load",function(){
 	});
 
 	function desaparecerElemento(){
-		var contenedor=document.getElementById("contenedor");
-		var inputText=document.getElementById("inputText");
-		contenedor.removeChild(addList);	
+		addList.style.display="none";
 	}
 
 	function aparecerFormulario(){
@@ -34,6 +32,7 @@ window.addEventListener("load",function(){
 		boton.addEventListener("click",function(){
 			imprimir();
 			desapareceFormulario();
+			addList();
 
 		});
 
@@ -58,12 +57,17 @@ window.addEventListener("load",function(){
 		}
 
 		function desapareceFormulario(){
-			var contenedor=document.getElementById("contenedor");
-			var form=document.getElementById("fondoForm");
-			contenedor.removeChild(form);
+			form.style.display="none";
 			}
-	}	
-		
+		function addList(){
+			var addList=document.createElement("div");
+			contenedor.appendChild(addList);
+			addList.textContent="Add an card...";
+			addList.classList.add("addList");
+			addList.setAttribute("id","addList");
+
+		}
+	}			
 });
 
 
