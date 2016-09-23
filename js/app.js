@@ -27,6 +27,7 @@ window.addEventListener("load",function(){
 		boton.setAttribute("type","button")
 		boton.classList.add("boton");
 		btnRemove.classList.add("icon-cross");
+		inputText.focus();
 
 		boton.addEventListener("click",function(){
 			imprimir();
