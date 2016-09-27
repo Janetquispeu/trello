@@ -15,6 +15,9 @@ section{
 	padding-right: 1%;
 	display: inline-block;
 	padding-bottom: 50%;
+	position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 #trello{
 	width: 100px;
@@ -159,4 +162,14 @@ section{
 	color: white;
 	font-weight: bold;
 	font-size: 120%;
+}
+.divCard{
+	width: 284px;
+	overflow: hidden;
+	border: 1px solid #E2E4E6;
+    margin-left: 7px;
+    margin-bottom: 7px;
+    padding: 15px;
+    border-radius: 3px;
+	background-color: white;
 }

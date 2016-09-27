@@ -1,5 +1,6 @@
 window.addEventListener("load",function(){
 	var addList=document.getElementById("addList");
+
 	addList.addEventListener("click", function(){
 		desaparecerElemento();
 		aparecerFormulario();
@@ -60,11 +61,13 @@ window.addEventListener("load",function(){
 			cardEnlace.textContent="Add an card...";
 
 			divEnlace.addEventListener("click",function(){
+				/* eliminar divEnlace */
 				divEnlace.style.display="none";
 				var divTextArea=document.createElement("form");
 				var textArea=document.createElement("textarea");
 				var botonAdd=document.createElement("button");
-				var btnRemovep=document.createElement("button")
+				var btnRemovep=document.createElement("button");
+
 				divContent.appendChild(divTextArea);
 				divTextArea.appendChild(textArea);
 				divTextArea.appendChild(botonAdd);
@@ -75,16 +78,27 @@ window.addEventListener("load",function(){
 				textArea.classList.add("textArea");
 				botonAdd.classList.add("botonAdd");
 				btnRemovep.classList.add("icon-cross");
+
 				botonAdd.addEventListener("click", function(ev){
 					ev.preventDefault();
 					divTextArea.style.display="none";
-					var form=document.getElementById("form");
-					var inputText=document.createElement("input");
-					form.appendChild(inputText);
-					inputText= divTextArea.value;
+					var divCard=document.createElement("div");
+					divContent.insertBefore(divCard,divEnlace);
+					divCard.classList.add("divCard");
+					divCard.textContent=textArea.value;
+					divEnlace.style.display="block";
+
+				
 				});
 			});
 
+		}
+		function divEnlace(){
+
+		}
+
+		function eliminarFormTextarea(){
+			document.querySelector("divTextArea").classList.remove("textArea"); 
 		}
 
 		function desapareceFormulario(){
