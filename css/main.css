@@ -142,14 +142,21 @@ section{
 	width: 284px;
 	border-radius: 3px;
 	display: block;
-	padding: 16px;
-
-
-	
+	padding: 16px;	
 }
 .divTextArea{
 	padding: 7px;
 }
 .botonAdd{
-	background-color: green;
+	width: 80px;
+	height: 34px;
+	background-color: #449D44;
+	border-radius: 5px;
+	border: 1px solid #449D44;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	margin-top: 8px;
+	color: white;
+	font-weight: bold;
+	font-size: 120%;
 }
