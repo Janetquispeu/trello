@@ -16,3 +16,6 @@ Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar l
 VERSIÓN 0.0.5
 
 Al dar click en el botón de guardar al momento de añadir tarjeta, mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
+
+VERSIÓN 0.0.6 (Extra)
+Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.

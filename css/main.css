@@ -3,21 +3,29 @@
 	padding: 0px;
 	margin: 0px;
 }
+header{
+	position: fixed;
+    width: 100%;
+}
 body{
 	background-image: url("fondo6jpg.jpg");
 	background-repeat: no-repeat;
 	overflow:auto;
 }
-section{
+img{
+	width: 200px;
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section , #contenedor{
 	width: 100%;
-	margin-top: 3%;
+	margin-top: 7%;
 	padding-left: 1%;
 	padding-right: 1%;
 	display: inline-block;
 	padding-bottom: 50%;
-	position: relative;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+	white-space: nowrap;
 }
 #trello{
 	width: 100px;
@@ -51,7 +59,7 @@ section{
 	margin-left: 0%;
 	margin-right: 3%;
 	margin-top: 0.5%;
-	float: left;
+	vertical-align: top;
 	border-radius: 3px;
 	padding: 0px;
 }
@@ -92,7 +100,7 @@ section{
 	margin-left: 4px;
 	margin-bottom: 4px;
 	margin-right: 4px;
-	float: left;
+	vertical-align: top;
 }
 .inputText{
 	width: 290px;
@@ -118,11 +126,6 @@ section{
 	color: white;
 	font-weight: bold;
 	font-size: 120%;
-}
-.board{
-	white-space: nowrap;
-  	overflow: auto;
-  
 }
 .icon-cross{
 	font-size: 140%;

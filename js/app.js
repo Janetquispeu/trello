@@ -93,9 +93,6 @@ window.addEventListener("load",function(){
 			});
 
 		}
-		function divEnlace(){
-
-		}
 
 		function eliminarFormTextarea(){
 			document.querySelector("divTextArea").classList.remove("textArea"); 
