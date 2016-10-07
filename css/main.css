@@ -6,6 +6,7 @@
 header{
 	position: fixed;
     width: 100%;
+    z-index: 1;
 }
 body{
 	background-image: url("fondo6jpg.jpg");
@@ -175,4 +176,8 @@ section , #contenedor{
     padding: 15px;
     border-radius: 3px;
 	background-color: white;
+	cursor: move;
+}
+.divCardOver{
+	background-color: purple;
 }
