@@ -2,117 +2,154 @@ window.addEventListener("load",function(){
 	var addList=document.getElementById("addList");
 
 	addList.addEventListener("click", function(){
-		desaparecerElemento();
+		desaparecerElemento(this);
 		aparecerFormulario();
-	});
+	});			
+});
+var contador=1;
 
-	function desaparecerElemento(){
-		addList.style.display="none";
+function desaparecerElemento(elemento){
+	elemento.style.display="none";
+}
+
+function aparecerFormulario(){
+	var form=document.getElementById("form");
+	var inputText=document.createElement("input");
+	var boton=document.createElement("button");
+	var btnRemove=document.createElement("button")
+
+	form.appendChild(inputText);
+	form.appendChild(boton);
+	form.appendChild(btnRemove);
+
+	form.classList.add("fondoForm")
+	form.style.background="#E2E4E6"; 
+	boton.textContent= "Save";
+	inputText.classList.add("inputText");
+	inputText.setAttribute("placeholder","Add a List...")
+	boton.setAttribute("type","button")
+	boton.classList.add("boton");
+	btnRemove.classList.add("icon-cross");
+	inputText.focus();
+
+	boton.addEventListener("click",function(){
+		imprimir(this.previousSibling, this.parentElement);
+		desapareceFormulario(this, this.parentElement);
+		agregarLista();
+	});		
+}	
+
+function imprimir(inputText, form){
+	var inputValor=inputText.value;
+	var divContent=document.createElement("div");
+	var contenedor=document.getElementById("contenedor");
+	var divClass=document.createElement("div");
+	var divEnlace=document.createElement("div");
+	var cardEnlace=document.createElement("a");
+
+	contenedor.insertBefore(divContent,form);
+	divContent.appendChild(divClass);
+	divContent.appendChild(divEnlace);
+	divEnlace.appendChild(cardEnlace);
+
+	divClass.textContent=inputValor;
+	inputText.value="";
+
+	divContent.classList.add("createList");
+	divClass.classList.add("divClass");
+	divEnlace.classList.add("divEnlace");
+	cardEnlace.classList.add("cardEnlace");
+	cardEnlace.textContent="Add a card...";
+
+	divEnlace.addEventListener("click",eliminarDivEnlace);
+
+	divContent.addEventListener("dragover", arrastrarSobre);
+	divContent.addEventListener("dragend", terminaArrastrar);
+	divContent.addEventListener("drop", soltar);
+
+	function arrastrarSobre(e) {
+		e.preventDefault();
 	}
 
-	function aparecerFormulario(){
-		var form=document.getElementById("form");
-		var inputText=document.createElement("input");
-		var boton=document.createElement("button");
-		var btnRemove=document.createElement("button")
-
-		form.appendChild(inputText);
-		form.appendChild(boton);
-		form.appendChild(btnRemove);
-
-		form.classList.add("fondoForm")
-		form.style.background="#E2E4E6"; 
-		boton.textContent= "Save";
-		inputText.classList.add("inputText");
-		inputText.setAttribute("placeholder","Add an List...")
-		boton.setAttribute("type","button")
-		boton.classList.add("boton");
-		btnRemove.classList.add("icon-cross");
-		inputText.focus();
-
-		boton.addEventListener("click",function(){
-			imprimir();
-			desapareceFormulario();
-			addList();
-
-		});
+	function soltar(e) {
+		var idArrastrado = e.dataTransfer.getData("text");
+		var elementoArrastrado = document.getElementById(idArrastrado);
+		this.insertBefore(elementoArrastrado,this.lastElementChild);
+	}
+	function terminaArrastrar(e) {
+		this.style.opacity = null;
+	}
+	
+}
 		
+function eliminarDivEnlace(){
+	this.style.display="none";
+	var divTextArea=document.createElement("form");
+	var textArea=document.createElement("textarea");
+	var botonAdd=document.createElement("button");
+	var btnRemovep=document.createElement("button");
 
-		function imprimir(){
-			var inputValor=inputText.value;
-			var divContent=document.createElement("div");
-			var contenedor=document.getElementById("contenedor");
-			var divEnlace=document.createElement("div");
-			var divList=document.createElement("div");
-			var cardEnlace=document.createElement("a");
+	this.parentElement.appendChild(divTextArea);
+	divTextArea.appendChild(textArea);
+	divTextArea.appendChild(botonAdd);
+	divTextArea.appendChild(btnRemovep);
+	botonAdd.textContent="Add";
+	textArea.focus();
 
-			contenedor.insertBefore(divContent,form);
-			divContent.appendChild(divList);
-			divContent.appendChild(divEnlace);
-			divEnlace.appendChild(cardEnlace);
+	divTextArea.classList.add("divTextArea");
+	textArea.classList.add("textArea");
+	botonAdd.classList.add("botonAdd");
+	btnRemovep.classList.add("icon-cross");
 
-			divList.textContent=inputValor;
-			divList.value="";
+	botonAdd.addEventListener("click", eliminarTextArea)
+}
 
-			divContent.classList.add("createList");
-			divList.classList.add("divClass");
-			divEnlace.classList.add("divEnlace");
-			cardEnlace.classList.add("cardEnlace");
-			cardEnlace.textContent="Add an card...";
+function eliminarTextArea(ev){
+	ev.preventDefault();
+	// this.parentElement.style.display="none";
+	var formulario = this.parentElement;
+	var divCard=document.createElement("div");
+	formulario.parentElement.insertBefore(divCard,formulario.previousSibling);
+	formulario.previousSibling.style.display="block";
+	divCard.classList.add("divCard");
+	divCard.draggable="true";
+	divCard.id=contador;
+	divCard.textContent=this.previousSibling.value;
+	this.previousSibling.value="";
+	formulario.remove();
+	contador++;
 
-			divEnlace.addEventListener("click",function(){
-				/* eliminar divEnlace */
-				divEnlace.style.display="none";
-				var divTextArea=document.createElement("form");
-				var textArea=document.createElement("textarea");
-				var botonAdd=document.createElement("button");
-				var btnRemovep=document.createElement("button");
+	divCard.addEventListener("dragstart", empiezaArrastrar);
+	divCard.addEventListener("dragend", terminaArrastrar);
+	divCard.addEventListener("dragover", arrastrarSobre);
 
-				divContent.appendChild(divTextArea);
-				divTextArea.appendChild(textArea);
-				divTextArea.appendChild(botonAdd);
-				divTextArea.appendChild(btnRemovep);
-				botonAdd.textContent="Add";
+	function empiezaArrastrar(e) {
+	e.dataTransfer.setData("text", this.id);
+	this.style.opacity = "0.9";
+	this.style.background="#D499B9"
+	}
+	function arrastrarSobre(e) {
+		e.preventDefault();
+	}
+	function terminaArrastrar(e) {
+		this.style.opacity = null;
+		this.style.background="white";
+	}
+}
 
-				divTextArea.classList.add("divTextArea");
-				textArea.classList.add("textArea");
-				botonAdd.classList.add("botonAdd");
-				btnRemovep.classList.add("icon-cross");
+function eliminarFormTextarea(){
+	document.querySelector("divTextArea").classList.remove("textArea"); 
+}
 
-				botonAdd.addEventListener("click", function(ev){
-					ev.preventDefault();
-					divTextArea.style.display="none";
-					var divCard=document.createElement("div");
-					divContent.insertBefore(divCard,divEnlace);
-					divCard.classList.add("divCard");
-					divCard.textContent=textArea.value;
-					divEnlace.style.display="block";
+function desapareceFormulario(boton, form){
+	boton.previousSibling.remove()// inputText
+	boton.nextSibling.remove(); // btnRemove
+	boton.remove();
+	form.style.background="none"; // form
 
-				
-				});
-			});
+}
 
-		}
-
-		function eliminarFormTextarea(){
-			document.querySelector("divTextArea").classList.remove("textArea"); 
-		}
-
-		function desapareceFormulario(){
-			inputText.style.display="none";
-			boton.style.display="none";
-			btnRemove.style.display="none";
-			form.style.background="none";
-
-			}
-		function addList(){
-			var addList=document.getElementById("addList");
-			addList.style.display="block";
-
-		}
-	}			
-});
-
-
-
-
+function agregarLista(){
+	var addList=document.getElementById("addList");
+	addList.style.display="block";
+}
