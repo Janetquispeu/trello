@@ -5,3 +5,6 @@ Implementar el evento Drag & Drop de las tarjetas para que pueda ser movida entr
 
 VERSIÓN 0.1.1
 Agregar un estilo personalizado a la tarjeta cuando esté siendo arrastrada por el usuario.
+
+VERSIÓN 0.1.2
+Agregar un estilo a la lista cuando la tarjeta esté pasando por encima (dragover).
