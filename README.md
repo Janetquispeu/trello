@@ -8,3 +8,6 @@ Agregar un estilo personalizado a la tarjeta cuando esté siendo arrastrada por 
 
 VERSIÓN 0.1.2
 Agregar un estilo a la lista cuando la tarjeta esté pasando por encima (dragover).
+
+VERSIÓN 0.1.3
+Agregar una transición css cuando la tarjeta y/o lista haya sido colocada en una nueva lista.

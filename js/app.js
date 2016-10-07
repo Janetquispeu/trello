@@ -72,18 +72,25 @@ function imprimir(inputText, form){
 	function arrastrarSobre(e) {
 		e.preventDefault();
 		this.classList.add("animated","tada");
+		this.classList.add("sombra");
+		this.style.border=null;
 	}
 	function dejaArrastrar(e) {
 		this.classList.remove("animated","tada");
+		this.classList.remove("sombra");	
 	}
+
 	function soltar(e) {
 		var idArrastrado = e.dataTransfer.getData("text");
 		var elementoArrastrado = document.getElementById(idArrastrado);
 		this.insertBefore(elementoArrastrado,this.lastElementChild);
+		this.classList.remove("sombra");
 	}
+
 	function terminaArrastrar(e) {
 		this.style.opacity = null;
 	}	
+
 }
 		
 function eliminarDivEnlace(){
@@ -126,27 +133,24 @@ function eliminarTextArea(ev){
 	divCard.addEventListener("dragstart", empiezaArrastrar);
 	divCard.addEventListener("dragend", terminaArrastrar);
 	divCard.addEventListener("dragenter", terminaArrastrar);
+	divCard.addEventListener("dragleave", dejaArrastrar);
 	divCard.addEventListener("dragover", arrastrarSobre);
 
 	function empiezaArrastrar(e) {
-	e.dataTransfer.setData("text", this.id);
-	this.style.opacity = "0.9";
-	this.style.background = null;
-	this.classList.add("divCardOver");
+		e.dataTransfer.setData("text", this.id);
+		this.style.opacity = "0.9";
+		this.style.background = null;
+		this.classList.add("divCardOver");
 	}
-	function entraArrastrar(e) {
-		this.style.cursor=null;
-		this.style.cursor="move";
-	}
+
 	function arrastrarSobre(e) {
 		e.preventDefault();
-		this.style.cursor="move";
-		this.style.cursor=null;
-		this.style.cursor="move";
 	}
+
 	function terminaArrastrar(e) {
 		this.style.opacity = null;
 		this.style.background="white";
+		this.classList.add("animated", "swing");
 	}
 }
 
