@@ -29,7 +29,7 @@ function aparecerFormulario(){
 	inputText.setAttribute("placeholder","Add a List...")
 	boton.setAttribute("type","submit")
 	boton.classList.add("boton");
-	btnRemove.classList.add("icon-cross");
+	// btnRemove.classList.add("icon-cross","btnRemove");
 	inputText.focus();
 
 	boton.addEventListener("click",function(e){
@@ -37,7 +37,7 @@ function aparecerFormulario(){
 		imprimir(this.previousSibling, this.parentElement);
 		desapareceFormulario(this, this.parentElement);
 		agregarLista();
-	});		
+	});	
 }	
 
 function imprimir(inputText, form){
