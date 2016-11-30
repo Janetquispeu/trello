@@ -1,4 +1,10 @@
-# trellov2
+# Trello
+
+Aplicación
+Este proyecto es la replica de la aplicación trello. Tiene las funcionalidades de crear tareas
+
+![alt tag](https://claseslaboratoria.slack.com/messages/@janetqu/files/F1RH75PJ6/)
+
 
 VERSIÓN 0.1.0
 Implementar el evento Drag & Drop de las tarjetas para que pueda ser movida entre las listas creadas.
